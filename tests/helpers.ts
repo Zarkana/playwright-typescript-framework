@@ -16,3 +16,7 @@ export async function isInViewport(page, element) {
         return true;
     }
 }
+
+export async function scrollToFooter(page) {
+    await page.getByText('Powered by Elemental Selenium').scrollIntoViewIfNeeded();
+}
