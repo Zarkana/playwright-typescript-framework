@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { waitForRequest } from './helpers';
 
-
+test.beforeEach(async ({ page }) => {
+  await page.goto('https://the-internet.herokuapp.com/dynamic_controls');
+});
 
 test.describe('Dynamic Control tests', () => {
   test('can check dynamic checkbox', async ({ page }) => {
