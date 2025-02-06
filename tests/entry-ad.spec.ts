@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { BASE_URL } from './helpers';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/entry_ad');
+  await page.goto(`${BASE_URL}/entry_ad`);
 });
 
 test.describe('Entry Ad tests', () => {

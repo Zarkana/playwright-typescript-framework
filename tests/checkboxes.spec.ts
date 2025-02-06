@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { BASE_URL } from './helpers';
 
 test('checkboxes can be unchecked', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/checkboxes');
-  await page.goto('https://the-internet.herokuapp.com/checkboxes');
+  await page.goto(`${BASE_URL}/checkboxes`);
   const firstCheckBox = page.getByRole('checkbox').nth(0);
   const secondCheckBox = page.getByRole('checkbox').nth(1);
   await expect(firstCheckBox).not.toBeChecked();

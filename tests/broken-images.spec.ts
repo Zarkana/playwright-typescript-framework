@@ -1,7 +1,8 @@
 import { test, expect, Locator } from '@playwright/test';
+import { BASE_URL } from './helpers';
 
 test('validate some images are broken', async ({ page }) => {
-  await page.goto('http://the-internet.herokuapp.com/broken_images');
+  await page.goto(`${BASE_URL}/broken_images`);
   const image1 = page.getByRole('img').nth(1);
   const image2 = page.getByRole('img').nth(2);
   const image3 = page.getByRole('img').nth(3);

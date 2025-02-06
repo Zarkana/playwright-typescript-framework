@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { BASE_URL } from './helpers';
 
 test('can submit forgot password', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/forgot_password');
+  await page.goto(`${BASE_URL}/forgot_password`);
   await page.getByRole('textbox', { name: 'E-mail' }).click();
   await page.getByRole('textbox', { name: 'E-mail' }).fill('jsc@gmail.com');
   await page.getByRole('button', { name: 'Retrieve password' }).click();

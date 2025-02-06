@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { waitForRequest } from './helpers';
+import { BASE_URL } from './helpers';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/dynamic_loading');
+  await page.goto(`${BASE_URL}/dynamic_loading`);
 });
 
 test('dynamically loaded invisible page element becomes visible', async ({ page }) => {

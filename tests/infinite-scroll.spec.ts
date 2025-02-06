@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { scrollToFooter } from './helpers';
+import { scrollToFooter, BASE_URL } from './helpers';
 
 test('page loads more text when it scrolls', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/infinite_scroll');
+  await page.goto(`${BASE_URL}/infinite_scroll`);
   const infiniteScroller = await page.locator('.jscroll-inner');
   const box = await infiniteScroller.boundingBox();
   const originalHeight = box?.height;

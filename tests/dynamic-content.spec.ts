@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { BASE_URL } from './helpers';
 
 test('dynamic content', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/dynamic_content?with_content=static');
+  await page.goto(`${BASE_URL}/dynamic_content?with_content=static`);
   await twoStaticBoxesSame(page);
   const dynamicBox = page.locator('#content > div:nth-child(7)');
   const dynamicText = await dynamicBox.textContent() ?? "";

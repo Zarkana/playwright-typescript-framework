@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
+import { BASE_URL } from './helpers';
 
 test('dissapearing elements', async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/disappearing_elements');
+  await page.goto(`${BASE_URL}/disappearing_elements`);
   await expect(page.getByRole('link', { name: 'Home' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Contact Us' })).toBeVisible();

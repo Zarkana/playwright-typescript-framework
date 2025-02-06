@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { waitForRequest } from './helpers';
+import { waitForRequest, BASE_URL } from './helpers';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://the-internet.herokuapp.com/dynamic_controls');
+  await page.goto(`${BASE_URL}/dynamic_controls`);
 });
 
 test.describe('Dynamic Control tests', () => {

@@ -1,5 +1,7 @@
 import { expect } from '@playwright/test';
 
+export const BASE_URL = "https://the-internet.herokuapp.com";
+
 export async function waitForRequest(page) {
     await expect(page.locator('#loading').getByRole('img')).toBeVisible({timeout: 7_000});
     await expect(page.locator('#loading').getByRole('img')).not.toBeVisible({timeout: 7_000});
