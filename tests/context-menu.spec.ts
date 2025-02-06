@@ -14,7 +14,6 @@ test.skip('dismiss context menu test', async ({ page }) => {
   });
 
   page.once('dialog', dialog => {
-    console.log(`Dialog message: ${dialog.message()}`);
     dialog.dismiss().catch(() => {});
   });
 });

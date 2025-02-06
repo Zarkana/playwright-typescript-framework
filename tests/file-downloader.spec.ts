@@ -9,7 +9,6 @@ test.skip('can download png', async ({ page }) => {
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('link', { name: 'agile-model.png' }).click();
   const download = await downloadPromise;
-  // page.on('download', download => download.path().then(console.log));
   // Wait for the download process to complete and save the downloaded file somewhere.
   await download.saveAs('./tmp/' + download.suggestedFilename());
   const filePath = './tmp/agile-model.png'; // Replace with your actual file
